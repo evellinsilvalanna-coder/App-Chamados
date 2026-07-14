@@ -17,6 +17,9 @@ from models import db, User, Department, Category, SLA, Chamado, Message, Attach
 app = Flask(__name__)
 app.config.from_object(Config)
 
+# Necessário para o Vercel
+app_handler = app
+
 db.init_app(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
